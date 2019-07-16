@@ -86,19 +86,19 @@ set cpo&vim
 " Default bindings
 
 if !hasmapto('<Plug>MarkSet', 'n')
-	nmap <unique> <silent> <leader>m <Plug>MarkSet
+	nmap <unique> <silent> <leader>mm <Plug>MarkSet
 endif
 if !hasmapto('<Plug>MarkSet', 'v')
-	vmap <unique> <silent> <leader>m <Plug>MarkSet
+	vmap <unique> <silent> <leader>mm <Plug>MarkSet
 endif
 if !hasmapto('<Plug>MarkRegex', 'n')
-	nmap <unique> <silent> <leader>r <Plug>MarkRegex
+	nmap <unique> <silent> <leader>mr <Plug>MarkRegex
 endif
 if !hasmapto('<Plug>MarkRegex', 'v')
-	vmap <unique> <silent> <leader>r <Plug>MarkRegex
+	vmap <unique> <silent> <leader>mr <Plug>MarkRegex
 endif
 if !hasmapto('<Plug>MarkClear', 'n')
-	nmap <unique> <silent> <leader>n <Plug>MarkClear
+	nmap <unique> <silent> <leader>mc <Plug>MarkClear
 endif
 
 nnoremap <silent> <Plug>MarkSet   :call
@@ -133,10 +133,10 @@ nnoremap <silent> <Plug>MarkClear :call
 "       do a \*; otherwise (\/ is the
 "       most recently used), do a \/.
 
-nnoremap <silent> <leader>* :call <sid>SearchCurrentMark()<cr>
-nnoremap <silent> <leader># :call <sid>SearchCurrentMark("b")<cr>
-nnoremap <silent> <leader>/ :call <sid>SearchAnyMark()<cr>
-nnoremap <silent> <leader>? :call <sid>SearchAnyMark("b")<cr>
+nnoremap <silent> <leader>m* :call <sid>SearchCurrentMark()<cr>
+nnoremap <silent> <leader>m# :call <sid>SearchCurrentMark("b")<cr>
+nnoremap <silent> <leader>m/ :call <sid>SearchAnyMark()<cr>
+nnoremap <silent> <leader>m? :call <sid>SearchAnyMark("b")<cr>
 nnoremap <silent> * :if !<sid>SearchNext()<bar>execute "norm! *"<bar>endif<cr>
 nnoremap <silent> # :if !<sid>SearchNext("b")<bar>execute "norm! #"<bar>endif<cr>
 
